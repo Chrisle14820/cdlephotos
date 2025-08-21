@@ -15,7 +15,7 @@ function SubNavMenu({
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
-    <div className="text-primary-foreground relative flex justify-center overflow-hidden w-full h-full">
+    <div className="text-white relative flex justify-center overflow-hidden w-full h-full">
       <img src={src} className="w-full h-full object-cover" />
       <div className="absolute w-full h-full bg-gradient-to-t from-60% to-black" />
       <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-80% to-black" />
@@ -28,36 +28,6 @@ function SubNavMenu({
         />
       </div>
       {subTitle ? <SubNavItem menuOpen={menuOpen} subData={subTitle} /> : ""}
-    </div>
-  );
-
-  return subTitle ? (
-    <div className="text-primary-foreground relative flex justify-center overflow-hidden w-full h-full">
-      <img src={src} className="w-full h-full object-cover" />
-      <div className="absolute w-full h-full bg-gradient-to-t from-60% to-black" />
-      <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-80% to-black" />
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-full flex justify-center z-99">
-        <SubNavButton
-          menuOpen={menuOpen}
-          setMenuOpen={setMenuOpen}
-          label={title}
-          showIcon
-        />
-      </div>
-      <SubNavItem menuOpen={menuOpen} subData={subTitle} />
-    </div>
-  ) : (
-    <div className="relative flex justify-center overflow-hidden w-full h-full">
-      <img src={src} className="w-full h-full object-cover" />
-      <div className="absolute w-full h-full bg-gradient-to-t from-60% to-black" />
-      <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-80% to-black" />
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-full flex justify-center z-99">
-        <SubNavButton
-          menuOpen={menuOpen}
-          setMenuOpen={setMenuOpen}
-          label={title}
-        />
-      </div>
     </div>
   );
 }

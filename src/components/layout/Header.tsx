@@ -16,12 +16,12 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className="text-primary-foreground fixed inset-0 z-49 bg-transparent w-full flex justify-between items-start p-16 max-h-[160px]">
+    <div className="text-primary fixed inset-0 z-49 w-full flex justify-between items-start p-16 max-h-[160px]">
       <Drawer>
         <DrawerTrigger>
           <Menu
             size={32}
-            className="cursor-pointer transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+            className="text-white cursor-pointer transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           />
         </DrawerTrigger>
         <DrawerContent data-vaul-drawer-direction="top">
@@ -56,7 +56,7 @@ export default function Header() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
-            <NavigationMenuList className="flex flex-col gap-12">
+            <NavigationMenuList className="flex flex-col gap-4 md:gap-12">
               <NavigationMenuItem asChild>
                 <div>
                   <div className="flex flex-col">
