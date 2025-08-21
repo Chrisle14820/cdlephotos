@@ -199,7 +199,7 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft size={32} className="text-white" />
+      <ArrowLeft size={32} className="text-primary-foreground" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -229,7 +229,7 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight size={32} className="text-white" />
+      <ArrowRight size={32} className="text-primary-foreground" />
       <span className="sr-only">Next slide</span>
     </Button>
   );
@@ -242,7 +242,9 @@ function CarouselSlide({ src, alt = "", label }: CarouselSlideProps) {
       <div className="absolute w-full h-full bg-gradient-to-t from-60% to-black" />
       <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-80% to-black" />
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-full flex justify-center">
-        <span className="text-white text-4xl font-bold mt-12">{label}</span>
+        <span className="text-primary-foreground text-4xl font-bold mt-12">
+          {label}
+        </span>
       </div>
     </div>
   );

@@ -5,17 +5,33 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselSlide,
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Header from "./components/layout/Header";
 import Autoplay from "embla-carousel-autoplay";
+import SubNavMenu from "./components/ui/sub-nav-button";
+
+const subData: { href: string; label: string }[] = [
+  {
+    href: "/",
+    label: "Tokyo",
+  },
+  {
+    href: "/",
+    label: "Kyoto",
+  },
+  {
+    href: "/",
+    label: "Osaka",
+  },
+];
 
 function App() {
   const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true })
   );
+
   return (
     <>
       <header>
@@ -24,19 +40,23 @@ function App() {
       <Carousel plugins={[plugin.current]} opts={{ loop: true }}>
         <CarouselContent>
           <CarouselItem className="lg:basis-1/3">
-            <CarouselSlide src="/japan.jpeg" label="Japan" />
+            <SubNavMenu title="Japan" src="/japan.jpeg" subTitle={subData} />
           </CarouselItem>
           <CarouselItem className="lg:basis-1/3">
-            <CarouselSlide src="/korea.jpeg" label="South Korea" />
+            <SubNavMenu title="South Korea" src="/korea.jpeg" />
           </CarouselItem>
           <CarouselItem className="lg:basis-1/3">
-            <CarouselSlide src="/us.jpeg" label="United States" />
+            <SubNavMenu
+              title="United States"
+              src="/us.jpeg"
+              subTitle={subData}
+            />
           </CarouselItem>
           <CarouselItem className="lg:basis-1/3">
-            <CarouselSlide src="/canada.jpeg" label="Canada" />
+            <SubNavMenu title="Canada" src="/canada.jpeg" subTitle={subData} />
           </CarouselItem>
           <CarouselItem className="lg:basis-1/3">
-            <CarouselSlide src="/costa.jpeg" label="Costa Rica" />
+            <SubNavMenu title="Costa Rica" src="/costa.jpeg" />
           </CarouselItem>
         </CarouselContent>
         <CarouselPrevious />
